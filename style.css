@@ -1,0 +1,2144 @@
+/* =========================================================
+   INVASION AFTER FIRE
+   Complete style.css
+========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color: #252525;
+  background: #f4f6f4;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   2. PAGE HEADER
+========================================================= */
+
+.app-header {
+  width: 100%;
+  height: 78px;
+}
+
+.app-header h1,
+body > h1 {
+  width: 100%;
+  height: 78px;
+  margin: 0;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: #2f7f32;
+
+  border-bottom: 2px solid #1f5d23;
+
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   3. MAIN APPLICATION LAYOUT
+========================================================= */
+
+#container {
+  width: 100%;
+  height: calc(100vh - 78px);
+
+  display: flex;
+  overflow: hidden;
+}
+
+#map {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+
+  position: relative;
+  z-index: 1;
+
+  border-right: 2px solid #cfd6cf;
+}
+
+#sidebar {
+  width: 420px;
+  min-width: 360px;
+  max-width: 490px;
+  height: 100%;
+
+  position: relative;
+  z-index: 10;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #ffffff;
+
+  border-left: 1px solid #d8ded8;
+
+  box-shadow:
+    -2px 0 8px
+    rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   4. SIDEBAR GENERAL
+========================================================= */
+
+.sidebar-content {
+  width: 100%;
+  padding: 24px;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.sidebar-section:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-section h2,
+.sidebar-section h3,
+.sidebar-section h4,
+.sidebar-section p {
+  overflow-wrap: anywhere;
+}
+
+.sidebar-section h2 {
+  margin: 0 0 14px;
+
+  color: #28772f;
+
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.sidebar-section h3 {
+  margin: 0 0 16px;
+
+  color: #404040;
+
+  font-size: 23px;
+  line-height: 1.25;
+}
+
+.sidebar-section h4 {
+  margin: 0;
+
+  color: #222222;
+
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.sidebar-section p {
+  line-height: 1.55;
+}
+
+.sidebar-eyebrow {
+  margin: 0 0 10px;
+
+  color: #6b6b6b;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.welcome-section p {
+  margin: 12px 0 0;
+
+  color: #555555;
+
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   5. WELCOME FEATURE LIST
+========================================================= */
+
+.welcome-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.welcome-feature-list div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 11px 13px;
+
+  color: #454b45;
+  background: #f5f8f5;
+
+  border: 1px solid #e0e6e0;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.welcome-feature-list span {
+  width: 24px;
+
+  flex-shrink: 0;
+
+  font-size: 17px;
+  text-align: center;
+}
+
+
+/* =========================================================
+   6. SIDEBAR DETAIL GRID
+========================================================= */
+
+.sidebar-detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sidebar-detail-row {
+  display: grid;
+  grid-template-columns:
+    minmax(120px, 1fr)
+    minmax(0, 1.3fr);
+
+  gap: 14px;
+
+  padding: 11px 0;
+
+  border-bottom: 1px solid #ecefec;
+}
+
+.sidebar-detail-row:last-child {
+  border-bottom: none;
+}
+
+.sidebar-detail-label {
+  color: #666666;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.sidebar-detail-value {
+  color: #222222;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   7. ENVIRONMENTAL CONDITION CARDS
+========================================================= */
+
+.environment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.environment-item {
+  padding: 14px 15px;
+
+  background: #f7f9f7;
+
+  border: 1px solid #dde5dd;
+  border-radius: 9px;
+}
+
+.environment-label {
+  margin-bottom: 5px;
+
+  color: #555555;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.environment-value {
+  color: #222222;
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.secondary-value {
+  margin-top: 3px;
+
+  color: #676767;
+
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   8. ACCORDION SIDEBAR
+========================================================= */
+
+.accordion-sidebar {
+  padding: 20px;
+}
+
+.selected-fire-header {
+  padding: 4px 3px 20px;
+}
+
+.selected-fire-header h2 {
+  margin: 0 0 8px;
+
+  color: #28772f;
+
+  font-size: 29px;
+  line-height: 1.15;
+
+  overflow-wrap: anywhere;
+}
+
+.selected-fire-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  color: #555555;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.summary-divider {
+  color: #a0a0a0;
+}
+
+.selected-fire-summary .risk-high,
+.selected-fire-summary .risk-moderate,
+.selected-fire-summary .risk-low,
+.selected-fire-summary .risk-unknown {
+  padding: 0;
+
+  background: transparent;
+  border: none;
+}
+
+.selected-fire-summary .risk-high {
+  color: #b91c1c;
+}
+
+.selected-fire-summary .risk-moderate {
+  color: #b45309;
+}
+
+.selected-fire-summary .risk-low {
+  color: #15733e;
+}
+
+.selected-fire-summary .risk-unknown {
+  color: #555555;
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordion-section {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #d8e0d8;
+  border-radius: 11px;
+
+  box-shadow:
+    0 1px 4px
+    rgba(0, 0, 0, 0.05);
+}
+
+.accordion-section.is-open {
+  border-color: #8db58f;
+
+  box-shadow:
+    0 2px 8px
+    rgba(47, 127, 50, 0.12);
+}
+
+.accordion-button {
+  width: 100%;
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 13px 15px;
+
+  color: #292929;
+  background: #f8faf8;
+
+  border: none;
+
+  font-size: 15px;
+  font-weight: 750;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.accordion-button:hover {
+  background: #eef6ef;
+}
+
+.accordion-section.is-open
+.accordion-button {
+  color: #236b29;
+  background: #edf6ee;
+}
+
+.accordion-button:focus-visible {
+  outline: 3px solid
+    rgba(47, 127, 50, 0.3);
+
+  outline-offset: -3px;
+}
+
+.accordion-title-group {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.accordion-icon {
+  width: 25px;
+
+  flex-shrink: 0;
+
+  font-size: 18px;
+  text-align: center;
+}
+
+.accordion-title {
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.accordion-button-right {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.accordion-badge {
+  padding: 4px 8px;
+
+  color: #4f5b50;
+  background: #e5ece5;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.accordion-chevron {
+  display: inline-flex;
+
+  color: #637064;
+
+  font-size: 16px;
+
+  transform: rotate(-90deg);
+
+  transition: transform 0.2s ease;
+}
+
+.accordion-section.is-open
+.accordion-chevron {
+  transform: rotate(0deg);
+}
+
+.accordion-panel {
+  background: #ffffff;
+}
+
+.accordion-panel[hidden] {
+  display: none;
+}
+
+.accordion-panel-inner {
+  padding: 16px;
+
+  border-top: 1px solid #e5ebe5;
+}
+
+.accordion-panel
+.environment-list {
+  gap: 10px;
+}
+
+.accordion-panel
+.environment-item {
+  padding: 12px 13px;
+}
+
+.accordion-panel
+.sidebar-detail-row {
+  padding: 9px 0;
+}
+
+
+/* =========================================================
+   9. RISK SUMMARY
+========================================================= */
+
+.risk-summary-card {
+  padding: 18px;
+
+  background: #fafafa;
+
+  border: 2px solid #d8d8d8;
+  border-radius: 12px;
+}
+
+.risk-score-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.risk-score {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.risk-score-maximum {
+  color: #696969;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.risk-level-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.risk-progress-track {
+  width: 100%;
+  height: 10px;
+  margin-top: 16px;
+
+  overflow: hidden;
+
+  background: #e2e6e2;
+
+  border-radius: 999px;
+}
+
+.risk-progress-fill {
+  height: 100%;
+
+  border-radius: 999px;
+
+  transition: width 0.35s ease;
+}
+
+.risk-percentage {
+  margin: 10px 0 0;
+
+  color: #555555;
+
+  font-size: 14px;
+}
+
+
+/* High risk */
+
+.risk-high {
+  background: #fff3f2;
+  border-color: #d73027;
+}
+
+.risk-high .risk-score {
+  color: #b91c1c;
+}
+
+.risk-high .risk-level-badge {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.risk-high .risk-progress-fill {
+  background: #d73027;
+}
+
+
+/* Moderate risk */
+
+.risk-moderate {
+  background: #fff9ed;
+  border-color: #f59e0b;
+}
+
+.risk-moderate .risk-score {
+  color: #b45309;
+}
+
+.risk-moderate .risk-level-badge {
+  color: #9a3412;
+  background: #ffedd5;
+}
+
+.risk-moderate .risk-progress-fill {
+  background: #f59e0b;
+}
+
+
+/* Low risk */
+
+.risk-low {
+  background: #f0faf4;
+  border-color: #1a9850;
+}
+
+.risk-low .risk-score {
+  color: #15733e;
+}
+
+.risk-low .risk-level-badge {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.risk-low .risk-progress-fill {
+  background: #1a9850;
+}
+
+
+/* Unknown risk */
+
+.risk-unknown {
+  background: #f5f5f5;
+  border-color: #777777;
+}
+
+.risk-unknown .risk-score {
+  color: #555555;
+}
+
+.risk-unknown .risk-level-badge {
+  color: #444444;
+  background: #e5e7eb;
+}
+
+.risk-unknown .risk-progress-fill {
+  background: #777777;
+}
+
+
+/* =========================================================
+   10. RISK FACTOR CARDS
+========================================================= */
+
+.risk-factor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.risk-factor-card {
+  width: 100%;
+  padding: 16px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #d9dfd9;
+  border-radius: 11px;
+
+  box-shadow:
+    0 1px 4px
+    rgba(0, 0, 0, 0.06);
+}
+
+.risk-factor-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.risk-factor-header h4 {
+  margin: 0;
+
+  color: #222222;
+
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.risk-factor-score {
+  flex-shrink: 0;
+
+  padding: 5px 9px;
+
+  color: #ffffff;
+  background: #3b7f3f;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.risk-factor-value {
+  margin-top: 13px;
+
+  color: #222222;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+
+  overflow-wrap: anywhere;
+}
+
+.risk-factor-explanation {
+  margin: 10px 0 0;
+
+  color: #505050;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+.factor-progress-track {
+  width: 100%;
+  height: 7px;
+
+  margin-top: 11px;
+
+  overflow: hidden;
+
+  background: #e3e8e3;
+
+  border-radius: 999px;
+}
+
+.factor-progress-fill {
+  height: 100%;
+
+  background: #3b7f3f;
+
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   11. DATA SOURCE BADGES
+========================================================= */
+
+.data-source-badge {
+  display: inline-flex;
+
+  margin-top: 7px;
+  padding: 4px 8px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.data-real {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.data-gbif {
+  color: #5b21b6;
+  background: #ede9fe;
+}
+
+.data-calculated {
+  color: #1e40af;
+  background: #dbeafe;
+}
+
+.data-simulated {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.data-unknown {
+  color: #444444;
+  background: #e5e7eb;
+}
+
+
+/* =========================================================
+   12. INVASIVE SUMMARY
+========================================================= */
+
+.invasive-summary-card {
+  padding: 15px;
+
+  background: #f7f4ff;
+
+  border: 1px solid #ddd4f5;
+  border-radius: 10px;
+}
+
+.invasive-summary-label {
+  margin: 0 0 7px;
+
+  color: #5c5269;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.invasive-summary-value {
+  color: #5b21b6;
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.invasive-summary-description {
+  margin: 11px 0 0;
+
+  color: #625b69;
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   13. NATIVE PLANT SCREENING NOTICE
+========================================================= */
+
+.native-plant-screening-notice {
+  padding: 15px;
+
+  color: #3d4d3f;
+  background: #f1f8f2;
+
+  border: 1px solid #cfe2d1;
+  border-left: 5px solid #2f7f32;
+  border-radius: 10px;
+}
+
+.native-plant-screening-notice h4 {
+  margin: 0 0 8px;
+
+  color: #246629;
+
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.native-plant-screening-notice p {
+  margin: 8px 0 0;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.native-plant-screening-notice strong {
+  color: #1f5d23;
+}
+
+
+/* =========================================================
+   14. NATIVE PLANT LIST AND CARDS
+========================================================= */
+
+.native-plant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin-top: 16px;
+}
+
+.native-plant-card {
+  width: 100%;
+  padding: 16px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #d6e2d7;
+  border-radius: 13px;
+
+  box-shadow:
+    0 2px 7px
+    rgba(0, 0, 0, 0.07);
+}
+
+.native-plant-card-header {
+  display: grid;
+  grid-template-columns:
+    34px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: start;
+  gap: 11px;
+}
+
+.native-plant-rank {
+  width: 32px;
+  height: 32px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: #2f7f32;
+
+  border-radius: 50%;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.native-plant-heading {
+  min-width: 0;
+}
+
+.native-plant-heading h4 {
+  margin: 1px 0 0;
+
+  color: #244d27;
+
+  font-size: 18px;
+  line-height: 1.25;
+
+  overflow-wrap: anywhere;
+}
+
+.native-plant-scientific-name {
+  margin: 4px 0 0;
+
+  color: #666666;
+
+  font-size: 13px;
+  line-height: 1.35;
+
+  overflow-wrap: anywhere;
+}
+
+.native-plant-match {
+  min-width: 58px;
+
+  padding: 6px 9px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   15. NATIVE PLANT MATCH SUMMARY
+========================================================= */
+
+.native-plant-match-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  margin-top: 12px;
+}
+
+.native-plant-type {
+  display: inline-flex;
+
+  padding: 5px 9px;
+
+  color: #4d5c4e;
+  background: #eef3ee;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.native-plant-match-summary strong {
+  display: inline-flex;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   16. PLANT MATCH COLORS
+========================================================= */
+
+.plant-match-excellent {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.plant-match-good {
+  color: #3f6212;
+  background: #ecfccb;
+}
+
+.plant-match-moderate {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.plant-match-low {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.native-plant-progress-track {
+  width: 100%;
+  height: 8px;
+
+  margin-top: 13px;
+
+  overflow: hidden;
+
+  background: #e4e9e4;
+
+  border-radius: 999px;
+}
+
+.native-plant-progress-fill {
+  height: 100%;
+
+  border-radius: 999px;
+
+  transition: width 0.35s ease;
+}
+
+.native-plant-progress-fill
+.plant-match-excellent,
+.native-plant-progress-fill.plant-match-excellent {
+  background: #15803d;
+}
+
+.native-plant-progress-fill
+.plant-match-good,
+.native-plant-progress-fill.plant-match-good {
+  background: #65a30d;
+}
+
+.native-plant-progress-fill
+.plant-match-moderate,
+.native-plant-progress-fill.plant-match-moderate {
+  background: #d97706;
+}
+
+.native-plant-progress-fill
+.plant-match-low,
+.native-plant-progress-fill.plant-match-low {
+  background: #dc2626;
+}
+
+
+/* =========================================================
+   17. PLANT CARD SECTION
+========================================================= */
+
+.plant-card-section {
+  margin-top: 15px;
+}
+
+.plant-card-section h5 {
+  margin: 0 0 9px;
+
+  color: #294f2c;
+
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.native-plant-reasons {
+  margin: 0;
+  padding-left: 20px;
+
+  color: #465047;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.native-plant-reasons li {
+  margin: 5px 0;
+}
+
+.native-plant-reasons li::marker {
+  color: #2f7f32;
+}
+
+
+/* =========================================================
+   18. EXPANDABLE PLANT DETAILS
+========================================================= */
+
+.native-plant-details {
+  margin-top: 12px;
+
+  border-top: 1px solid #e3e9e3;
+}
+
+.native-plant-details summary {
+  padding: 12px 2px 3px;
+
+  color: #2d6a32;
+
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.35;
+
+  cursor: pointer;
+
+  user-select: none;
+}
+
+.native-plant-details summary:hover {
+  color: #1f5524;
+}
+
+.native-plant-details summary:focus-visible {
+  outline: 2px solid
+    rgba(47, 127, 50, 0.35);
+
+  outline-offset: 3px;
+}
+
+.native-plant-details[open]
+summary {
+  margin-bottom: 9px;
+}
+
+.native-plant-details-content {
+  padding: 2px 1px 8px;
+}
+
+.native-plant-note-text {
+  margin: 0;
+
+  color: #515b52;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   19. PLANT COMPONENT SCORE BARS
+========================================================= */
+
+.plant-component-score {
+  margin-bottom: 12px;
+}
+
+.plant-component-score:last-child {
+  margin-bottom: 0;
+}
+
+.plant-component-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 5px;
+
+  color: #485249;
+
+  font-size: 12px;
+}
+
+.plant-component-heading strong {
+  color: #274d2b;
+
+  font-size: 12px;
+}
+
+.plant-component-track {
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  background: #e3e9e3;
+
+  border-radius: 999px;
+}
+
+.plant-component-fill {
+  height: 100%;
+
+  background: #3d8b44;
+
+  border-radius: 999px;
+
+  transition: width 0.35s ease;
+}
+
+
+/* =========================================================
+   20. SITE COMPARISON
+========================================================= */
+
+.plant-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.plant-comparison-card {
+  padding: 12px;
+
+  background: #f7faf7;
+
+  border: 1px solid #e0e7e0;
+  border-radius: 9px;
+}
+
+.plant-comparison-card h6 {
+  margin: 0 0 8px;
+
+  color: #315c35;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   21. ECOLOGICAL DETAIL ROWS
+========================================================= */
+
+.plant-ecological-grid,
+.plant-rating-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.plant-ecological-row {
+  display: grid;
+  grid-template-columns:
+    minmax(105px, 0.9fr)
+    minmax(0, 1.25fr);
+
+  gap: 12px;
+
+  padding: 8px 0;
+
+  border-bottom: 1px solid #e8ece8;
+}
+
+.plant-ecological-row:last-child {
+  border-bottom: none;
+}
+
+.plant-ecological-label {
+  color: #687068;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.plant-ecological-value {
+  color: #323a33;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.plant-subheading {
+  margin: 15px 0 8px;
+
+  color: #315c35;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   22. RESTORATION USE TAGS
+========================================================= */
+
+.plant-use-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.plant-use-tag {
+  display: inline-flex;
+
+  padding: 5px 8px;
+
+  color: #355a38;
+  background: #eaf3eb;
+
+  border: 1px solid #d3e3d5;
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   23. PLANT CAUTIONS
+========================================================= */
+
+.native-plant-caution-details summary {
+  color: #8a4c10;
+}
+
+.native-plant-caution-details summary:hover {
+  color: #6f3c0a;
+}
+
+.native-plant-cautions {
+  margin: 0;
+  padding-left: 20px;
+
+  color: #655243;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.native-plant-cautions li {
+  margin: 6px 0;
+}
+
+.native-plant-cautions li::marker {
+  color: #d97706;
+}
+
+
+/* =========================================================
+   24. CNPS / CALSCAPE SOURCE LINK
+========================================================= */
+
+.native-plant-source-link {
+  width: 100%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  margin-top: 14px;
+  padding: 10px 12px;
+
+  color: #ffffff;
+  background: #2f7f32;
+
+  border: 1px solid #246629;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.native-plant-source-link:hover {
+  background: #256b2a;
+
+  box-shadow:
+    0 2px 6px
+    rgba(0, 0, 0, 0.16);
+
+  transform: translateY(-1px);
+}
+
+.native-plant-source-link:focus-visible {
+  outline: 3px solid
+    rgba(47, 127, 50, 0.32);
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   25. NATIVE PLANT VERIFICATION NOTICE
+========================================================= */
+
+.native-plant-verification {
+  margin-top: 16px;
+  padding: 15px;
+
+  color: #4c4f4c;
+  background: #f8f8f6;
+
+  border: 1px solid #dfdfd8;
+  border-radius: 10px;
+}
+
+.native-plant-verification h4 {
+  margin: 0 0 9px;
+
+  color: #454845;
+
+  font-size: 15px;
+}
+
+.native-plant-verification ul {
+  margin: 0;
+  padding-left: 20px;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.native-plant-verification li {
+  margin: 6px 0;
+}
+
+.native-plant-verification li::marker {
+  color: #6b756c;
+}
+
+
+/* =========================================================
+   26. FALLBACK MESSAGE
+========================================================= */
+
+.future-feature-message {
+  padding: 15px;
+
+  color: #566057;
+  background: #f4f7f4;
+
+  border: 1px dashed #aeb9af;
+  border-radius: 9px;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   27. DATA STATUS
+========================================================= */
+
+.data-status-description {
+  margin: 18px 0 0;
+
+  color: #666666;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   28. FIRE POPUPS
+========================================================= */
+
+.fire-popup {
+  min-width: 245px;
+  max-width: 330px;
+}
+
+.fire-popup h3 {
+  margin: 0 0 14px;
+
+  color: #303030;
+
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.fire-popup p {
+  margin: 9px 0;
+
+  color: #343434;
+
+  font-size: 14px;
+  line-height: 1.45;
+
+  overflow-wrap: anywhere;
+}
+
+.fire-popup strong {
+  color: #292929;
+}
+
+.fire-popup small {
+  color: #666666;
+
+  font-size: 12px;
+}
+
+.fire-popup hr {
+  margin: 15px 0;
+
+  border: none;
+  border-top: 1px solid #c8c8c8;
+}
+
+
+/* =========================================================
+   29. INVASIVE OBSERVATION POPUPS
+========================================================= */
+
+.invasive-popup {
+  min-width: 245px;
+  max-width: 320px;
+}
+
+.invasive-popup h3 {
+  margin: 0 0 4px;
+
+  color: #2f6f35;
+
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.invasive-popup .scientific-name {
+  margin: 2px 0 12px;
+
+  color: #666666;
+
+  font-size: 13px;
+}
+
+.observation-detail {
+  display: grid;
+  grid-template-columns:
+    minmax(105px, 1fr)
+    minmax(0, 1.2fr);
+
+  gap: 12px;
+
+  padding: 8px 0;
+
+  border-bottom: 1px solid #ecefec;
+}
+
+.observation-detail:last-child {
+  border-bottom: none;
+}
+
+.observation-detail span {
+  color: #666666;
+
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.observation-detail strong {
+  color: #252525;
+
+  font-size: 12px;
+  line-height: 1.35;
+
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   30. INVASIVE SPECIES LEGEND
+========================================================= */
+
+.invasive-species-legend {
+  min-width: 195px;
+  max-width: 245px;
+  max-height: 270px;
+
+  padding: 12px 14px;
+
+  overflow-y: auto;
+
+  color: #333333;
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #d7ddd7;
+  border-radius: 9px;
+
+  box-shadow:
+    0 2px 9px
+    rgba(0, 0, 0, 0.25);
+
+  line-height: 1.35;
+}
+
+.invasive-species-legend h4 {
+  margin: 0 0 10px;
+
+  color: #285e2d;
+
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.invasive-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin: 7px 0;
+
+  color: #333333;
+
+  font-size: 13px;
+}
+
+.invasive-legend-dot {
+  width: 12px;
+  height: 12px;
+
+  flex-shrink: 0;
+
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 1px #555555;
+}
+
+
+/* =========================================================
+   31. FIRE RISK LEGEND
+========================================================= */
+
+.legend {
+  min-width: 150px;
+
+  padding: 12px 14px;
+
+  color: #333333;
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #d7ddd7;
+  border-radius: 9px;
+
+  box-shadow:
+    0 2px 9px
+    rgba(0, 0, 0, 0.25);
+
+  line-height: 1.4;
+}
+
+.legend h4 {
+  margin: 0 0 10px;
+
+  color: #2f6f35;
+
+  font-size: 15px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin: 7px 0;
+
+  font-size: 13px;
+}
+
+.legend-color {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+
+  border: 1px solid #333333;
+}
+
+
+/* =========================================================
+   32. MARKER CLUSTERS
+========================================================= */
+
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background-color:
+    rgba(47, 127, 50, 0.28);
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  color: #ffffff;
+  background-color: #2f7f32;
+
+  font-weight: 800;
+}
+
+.marker-cluster div {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   33. LEAFLET CONTROLS
+========================================================= */
+
+.leaflet-control-layers {
+  max-width: 250px;
+  max-height: 300px;
+
+  overflow-y: auto;
+
+  border-radius: 8px;
+}
+
+.leaflet-control-layers-expanded {
+  padding: 10px 12px;
+}
+
+.leaflet-control-layers label {
+  margin: 5px 0;
+
+  font-size: 13px;
+}
+
+.leaflet-control-zoom a {
+  font-size: 20px;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 10px;
+}
+
+.leaflet-popup-content {
+  margin: 18px 20px;
+}
+
+.leaflet-popup-close-button {
+  padding: 5px 7px 0 0 !important;
+
+  font-size: 23px !important;
+}
+
+
+/* =========================================================
+   34. MAP PANES
+========================================================= */
+
+.leaflet-fire-pane {
+  pointer-events: auto;
+}
+
+.leaflet-invasives-pane,
+.leaflet-marker-pane {
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   35. MAP ERROR MESSAGE
+========================================================= */
+
+.map-error {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: min(500px, 85%);
+
+  padding: 24px;
+
+  transform:
+    translate(-50%, -50%);
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 2px solid #d9534f;
+  border-radius: 10px;
+
+  box-shadow:
+    0 4px 18px
+    rgba(0, 0, 0, 0.2);
+}
+
+.map-error h3 {
+  margin: 0 0 12px;
+
+  color: #b42318;
+}
+
+.map-error p {
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   36. SCROLLBARS
+========================================================= */
+
+#sidebar::-webkit-scrollbar,
+.invasive-species-legend::-webkit-scrollbar,
+.leaflet-control-layers::-webkit-scrollbar {
+  width: 9px;
+}
+
+#sidebar::-webkit-scrollbar-track,
+.invasive-species-legend::-webkit-scrollbar-track,
+.leaflet-control-layers::-webkit-scrollbar-track {
+  background: #f0f2f0;
+}
+
+#sidebar::-webkit-scrollbar-thumb,
+.invasive-species-legend::-webkit-scrollbar-thumb,
+.leaflet-control-layers::-webkit-scrollbar-thumb {
+  background: #aeb8ae;
+
+  border-radius: 999px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover,
+.invasive-species-legend::-webkit-scrollbar-thumb:hover,
+.leaflet-control-layers::-webkit-scrollbar-thumb:hover {
+  background: #879487;
+}
+
+
+/* =========================================================
+   37. TABLET LAYOUT
+========================================================= */
+
+@media (max-width: 1100px) {
+  #sidebar {
+    width: 380px;
+    min-width: 325px;
+  }
+
+  .sidebar-content,
+  .accordion-sidebar {
+    padding: 19px;
+  }
+
+  .app-header h1,
+  body > h1 {
+    font-size: 29px;
+  }
+
+  .native-plant-card {
+    padding: 14px;
+  }
+}
+
+
+/* =========================================================
+   38. MOBILE LAYOUT
+========================================================= */
+
+@media (max-width: 760px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .app-header,
+  .app-header h1,
+  body > h1 {
+    height: auto;
+    min-height: 66px;
+  }
+
+  .app-header h1,
+  body > h1 {
+    padding: 14px 16px;
+
+    font-size: 25px;
+    text-align: center;
+  }
+
+  #container {
+    height: auto;
+    min-height:
+      calc(100vh - 66px);
+
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  #map {
+    width: 100%;
+    height: 58vh;
+    min-height: 430px;
+
+    border-right: none;
+    border-bottom: 2px solid #cfd6cf;
+  }
+
+  #sidebar {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    max-height: none;
+
+    overflow: visible;
+
+    border-left: none;
+
+    box-shadow: none;
+  }
+
+  .sidebar-content,
+  .accordion-sidebar {
+    padding: 18px;
+  }
+
+  .sidebar-detail-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .sidebar-detail-value {
+    text-align: left;
+  }
+
+  .risk-score-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .native-plant-card-header {
+    grid-template-columns:
+      34px
+      minmax(0, 1fr);
+  }
+
+  .native-plant-match {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .plant-ecological-row {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .plant-ecological-value {
+    text-align: left;
+  }
+
+  .leaflet-control-layers {
+    max-width: 210px;
+  }
+
+  .invasive-species-legend {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   39. VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 430px) {
+  .sidebar-content,
+  .accordion-sidebar {
+    padding: 15px;
+  }
+
+  .sidebar-section h2,
+  .selected-fire-header h2 {
+    font-size: 25px;
+  }
+
+  .sidebar-section h3 {
+    font-size: 21px;
+  }
+
+  .accordion-button {
+    min-height: 54px;
+    padding: 12px;
+  }
+
+  .accordion-button-right
+  .accordion-badge {
+    display: none;
+  }
+
+  .accordion-panel-inner {
+    padding: 13px;
+  }
+
+  .risk-factor-card {
+    padding: 14px;
+  }
+
+  .risk-factor-header {
+    flex-direction: column;
+  }
+
+  .risk-factor-score {
+    align-self: flex-start;
+  }
+
+  .observation-detail {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .observation-detail strong {
+    text-align: left;
+  }
+
+  .native-plant-card {
+    padding: 13px;
+  }
+
+  .native-plant-card-header {
+    grid-template-columns:
+      30px
+      minmax(0, 1fr);
+  }
+
+  .native-plant-rank {
+    width: 28px;
+    height: 28px;
+  }
+
+  .native-plant-heading h4 {
+    font-size: 16px;
+  }
+
+  .native-plant-source-link {
+    font-size: 11px;
+  }
+}

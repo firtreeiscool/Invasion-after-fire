@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Invasion After Fire</title>
+
+
+  <!-- =====================================================
+       LEAFLET CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  >
+
+
+  <!-- =====================================================
+       LEAFLET MARKER CLUSTER CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+  >
+
+
+  <!-- =====================================================
+       APPLICATION CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       PAGE HEADER
+  ====================================================== -->
+
+  <header class="app-header">
+
+    <h1>
+      🔥 Invasion After Fire
+    </h1>
+
+  </header>
+
+
+  <!-- =====================================================
+       MAIN APPLICATION LAYOUT
+  ====================================================== -->
+
+  <main id="container">
+
+    <!-- Interactive wildfire and invasive-plant map -->
+
+    <section
+      id="map"
+      aria-label="Interactive wildfire and invasive plant map"
+    ></section>
+
+
+    <!-- Fire information and restoration sidebar -->
+
+    <aside
+      id="sidebar"
+      aria-label="Selected fire information and restoration guidance"
+    >
+
+      <div class="sidebar-content">
+
+        <section class="sidebar-section welcome-section">
+
+          <p class="sidebar-eyebrow">
+            Invasion After Fire
+          </p>
+
+          <h2>
+            Select a Fire
+          </h2>
+
+          <p>
+            Click a fire polygon to view environmental
+            conditions, invasive-plant proximity,
+            invasion-risk scores, and candidate native
+            species for further evaluation.
+          </p>
+
+          <div class="welcome-feature-list">
+
+            <div>
+              <span aria-hidden="true">
+                🔥
+              </span>
+
+              Fire information
+            </div>
+
+            <div>
+              <span aria-hidden="true">
+                ⛰️
+              </span>
+
+              Environmental GIS data
+            </div>
+
+            <div>
+              <span aria-hidden="true">
+                📊
+              </span>
+
+              Invasion-risk assessment
+            </div>
+
+            <div>
+              <span aria-hidden="true">
+                🌱
+              </span>
+
+              Nearby invasive observations
+            </div>
+
+            <div>
+              <span aria-hidden="true">
+                🌿
+              </span>
+
+              Candidate native species
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+
+  <!-- =====================================================
+       LEAFLET JAVASCRIPT
+  ====================================================== -->
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  ></script>
+
+
+  <!-- =====================================================
+       LEAFLET MARKER CLUSTER JAVASCRIPT
+  ====================================================== -->
+
+  <script
+    src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"
+  ></script>
+
+
+  <!-- =====================================================
+       APPLICATION JAVASCRIPT
+
+       FILE ORDER MATTERS:
+
+       1. risk.js
+          Defines calculateRisk() and getFireColor().
+
+       2. plant.js
+          Defines the native-plant database and
+          getNativePlantRecommendations().
+
+       3. sidebar.js
+          Uses both risk.js and plant.js functions.
+
+       4. legend.js
+          Creates the fire-risk map legend.
+
+       5. script.js
+          Loads the data and starts the application.
+  ====================================================== -->
+
+  <script src="risk.js"></script>
+
+  <script src="plant.js"></script>
+
+  <script src="sidebar.js"></script>
+
+  <script src="legend.js"></script>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
